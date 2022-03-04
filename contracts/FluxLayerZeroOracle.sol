@@ -46,6 +46,7 @@ contract FluxLayerZeroOracle is AccessControl, ILayerZeroOracle, ReentrancyGuard
     //
 
     constructor(address _admin, address _layerZero) {
+        _setupRole(DEFAULT_ADMIN_ROLE, _admin);
         _setupRole(ADMIN_ROLE, _admin);
         _setupRole(LAYERZERO_ROLE, _layerZero);
     }
